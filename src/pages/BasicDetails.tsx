@@ -10,42 +10,63 @@ export default function BasicDetails() {
 
   const handleNext = () => {
     console.log({ fullName, email, admissionNumber });
-    // You could save this in context or localStorage
     navigate("/upload-profile");
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4">
-      <h2 className="text-xl font-semibold mb-6">Enter Your Details</h2>
-
-      <input
-        type="text"
-        placeholder="Full Name"
-        value={fullName}
-        onChange={(e) => setFullName(e.target.value)}
-        className="w-full max-w-sm mb-4 px-4 py-2 border border-gray-300 rounded"
-      />
-      <input
-        type="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full max-w-sm mb-4 px-4 py-2 border border-gray-300 rounded"
-      />
-      <input
-        type="text"
-        placeholder="Admission Number"
-        value={admissionNumber}
-        onChange={(e) => setAdmissionNumber(e.target.value)}
-        className="w-full max-w-sm mb-6 px-4 py-2 border border-gray-300 rounded"
-      />
-
-      <button
-        onClick={handleNext}
-        className="bg-[#6F3F2A] text-white px-6 py-2 rounded w-full max-w-sm"
-      >
-        Next
-      </button>
+    <div className="min-h-screen flex items-center justify-center bg-[#fdf5ef] px-4 py-10">
+      <div className="bg-white rounded-xl shadow-lg w-full max-w-md p-6 md:p-8">
+        <h2 className="text-center text-xl font-bold text-black mb-8">
+          Enter your Basic Details
+        </h2>
+  
+        <div className="space-y-6">
+          <div>
+            <label className="block text-base font-semibold text-black mb-2">
+              Full Name
+            </label>
+            <input
+              type="text"
+              placeholder="Input Value.."
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              className="w-full px-4 py-3 bg-[#f1f1f1] text-black placeholder-gray-500 rounded-md focus:outline-none"
+            />
+          </div>
+  
+          <div>
+            <label className="block text-base font-semibold text-black mb-2">
+              Email ID
+            </label>
+            <input
+              type="email"
+              placeholder="Input Value.."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-3 bg-[#f1f1f1] text-black placeholder-gray-500 rounded-md focus:outline-none"
+            />
+          </div>
+  
+          <div>
+            <label className="block text-base font-semibold text-black mb-2">
+              Admission Number
+            </label>
+            <input
+              type="text"
+              placeholder="Input Value.."
+              value={admissionNumber}
+              onChange={(e) => setAdmissionNumber(e.target.value)}
+              className="w-full px-4 py-3 bg-[#f1f1f1] text-black placeholder-gray-500 rounded-md focus:outline-none"
+            />
+          </div>
+        </div>
+  
+        <button
+          onClick={handleNext}
+          className="mt-8 bg-[#875C29] text-white text-base font-medium py-3 w-full rounded-md hover:bg-[#704b21] transition"
+        >
+          Next
+        </button>
+      </div>
     </div>
-  );
-}
+  );}
